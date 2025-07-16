@@ -9,9 +9,10 @@ import UIKit
 
 class ProtocolDelegate2Cell: UITableViewCell {
 
+    @IBOutlet weak var textData: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

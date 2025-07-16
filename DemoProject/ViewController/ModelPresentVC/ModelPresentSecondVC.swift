@@ -6,3 +6,16 @@
 //
 
 import Foundation
+import UIKit
+
+class ModelPresentSecondVC: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction func backbutton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+}

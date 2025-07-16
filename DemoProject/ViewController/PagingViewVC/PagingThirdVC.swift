@@ -11,4 +11,9 @@ class PagingThirdVC:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func AboutButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
+
+    }
 }

@@ -19,9 +19,6 @@ class PagingFirstVC:UIViewController,LZViewPagerDelegate,LZViewPagerDataSource{
     }
     
     
-    @IBAction func backbutton(_ sender: Any) {
-        self.navigationController?.popViewController(animated: false)
-    }
     func viewPagerProperty(){
         viewPager.hostController = self
         
@@ -51,9 +48,9 @@ class PagingFirstVC:UIViewController,LZViewPagerDelegate,LZViewPagerDataSource{
     
     func button(at index: Int) -> UIButton {
         let button = UIButton()
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor.systemGray, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.backgroundColor = .black
+        button.backgroundColor = .white
         
         return button
     }
@@ -67,5 +64,4 @@ class PagingFirstVC:UIViewController,LZViewPagerDelegate,LZViewPagerDataSource{
         return .white
     }
    
-    
 }

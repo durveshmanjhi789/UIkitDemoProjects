@@ -11,4 +11,10 @@ class PagingFifthVC:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    @IBAction func ProfileButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
+
+    }
 }

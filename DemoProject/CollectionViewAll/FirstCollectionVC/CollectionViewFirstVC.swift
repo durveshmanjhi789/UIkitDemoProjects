@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SKPhotoBrowser
 
 class CollectionViewFirstVC:UIViewController{
     
@@ -108,16 +109,25 @@ extension CollectionViewFirstVC:UICollectionViewDataSource,UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == firstCollectionView{
-            
-            let vc = self.storyboard?.instantiateViewController(identifier: "CollectionViewSecondVC")as! CollectionViewSecondVC
-            vc.petImage = UIImage(named: petsList3[indexPath.item])!
-            self.navigationController?.pushViewController(vc, animated: true)
-            
+
+            var images = [SKPhoto]()
+            let photo = SKPhoto.photoWithImage(UIImage(named: petsList3[indexPath.item])!)// add some UIImage
+            images.append(photo)
+
+            // 2. create PhotoBrowser Instance, and present from your viewController.
+            let browser = SKPhotoBrowser(photos: images)
+            browser.initializePageIndex(0)
+            present(browser, animated: true, completion: {})
         }else{
             
-            let vc = self.storyboard?.instantiateViewController(identifier: "CollectionViewSecondVC")as! CollectionViewSecondVC
-            vc.petImage = UIImage(named: petsList[indexPath.item])!
-            self.navigationController?.pushViewController(vc, animated: true)
+            var images = [SKPhoto]()
+            let photo = SKPhoto.photoWithImage(UIImage(named: petsList[indexPath.item])!)// add some UIImage
+            images.append(photo)
+            // 2. create PhotoBrowser Instance, and present from your viewController.
+            let browser = SKPhotoBrowser(photos: images)
+            browser.initializePageIndex(0)
+            present(browser, animated: true, completion: {})
+           
         }
         
     }
